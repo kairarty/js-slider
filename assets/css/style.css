@@ -1,0 +1,145 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: -99;
+  -webkit-transition: opacity 0.25s;
+  -o-transition: opacity 0.25s;
+  transition: opacity 0.25s;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.controls {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.control {
+  color: white;
+  padding: 1em;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.control-prev,
+.control-next,
+.control-pause {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+}
+
+.control-pause {
+  top: calc(50% - 15vh);
+  left: calc(50% - 10vh);
+  opacity: 0;
+}
+
+.control-pause:hover,
+.control-pause:focus {
+  opacity: 1;
+}
+
+.control-pause span {
+  -webkit-transform: translate(50%, 50%);
+      -ms-transform: translate(50%, 50%);
+          transform: translate(50%, 50%);
+}
+
+.fa-angle-left:hover,
+.fa-angle-left:focus,
+.fa-angle-right:hover,
+.fa-angle-right:focus {
+  opacity: 0.9;
+}
+
+.control-next {
+  right: 2vh;
+}
+
+.control-prev {
+  left: 2vh;
+}
+
+.fa-angle-left,
+.fa-angle-right {
+  color: white;
+  opacity: 0.6;
+  font-size: 8vh;
+}
+
+.fa-play-circle,
+.fa-pause-circle {
+  color: white;
+  opacity: 0.6;
+  font-size: 20vh;
+}
+
+.indicators {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  margin-bottom: 4vh;
+}
+
+.indicator {
+  width: 7vh;
+  height: 8px;
+  opacity: 0.4;
+  margin-left: 10px;
+  background-color: white;
+}
+.indicator:hover {
+  cursor: pointer;
+}
+.indicator.active {
+  opacity: 0.9;
+}
+
+.control-pause > span {
+  opacity: 0;
+  position: absolute;
+}
